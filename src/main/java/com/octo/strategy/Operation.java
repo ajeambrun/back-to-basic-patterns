@@ -1,27 +1,26 @@
 package com.octo.strategy;
 
-public interface Operation {
-    int compute(int leftOperand, int rightOperand);
 
-    static Operation of(String operator) {
-        if (operator.equals("+")) {
-            return new Addition();
-        } else {
-            return new Soustraction();
-        }
+import java.util.Arrays;
+import java.util.function.BinaryOperator;
+
+public enum Operation {
+    ADD("+", (a, b) -> a + b),
+    SUB("-", (a, b) -> a - b);
+
+    String symbol;
+    BinaryOperator<Integer> operator;
+
+    Operation(String symbol, BinaryOperator<Integer> operator) {
+        this.symbol = symbol;
+        this.operator = operator;
     }
-}
 
-class Addition implements Operation {
-    @Override
-    public int compute(int leftOperand, int rightOperand) {
-        return leftOperand + rightOperand;
+    int compute(int leftOperand, int rightOperand) {
+        return operator.apply(leftOperand, rightOperand);
     }
-}
 
-class Soustraction implements Operation {
-    @Override
-    public int compute(int leftOperand, int rightOperand) {
-        return leftOperand - rightOperand;
+    static Operation of(String symbol) {
+        return Arrays.stream(values()).filter(v -> v.symbol.equals(symbol)).findFirst().orElse(null);
     }
 }
