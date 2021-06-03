@@ -1,4 +1,4 @@
-package com.octo.composite;
+package com.octo.composite.pizza;
 
 public class Chevre extends Ingredient {
     public Chevre(Ingredient ingredientSuivant) {

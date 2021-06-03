@@ -1,4 +1,4 @@
-package com.octo.composite;
+package com.octo.composite.pizza;
 
 public class Pate extends Ingredient implements Cuisinable {
     public Pate(Ingredient ingredientSuivant) {

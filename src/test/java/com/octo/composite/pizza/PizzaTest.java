@@ -1,5 +1,6 @@
-package com.octo.composite;
+package com.octo.composite.pizza;
 
+import com.octo.composite.pizza.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

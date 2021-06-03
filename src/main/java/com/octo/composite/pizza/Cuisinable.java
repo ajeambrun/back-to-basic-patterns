@@ -1,4 +1,4 @@
-package com.octo.composite;
+package com.octo.composite.pizza;
 
 public interface Cuisinable {
     String cuire();
