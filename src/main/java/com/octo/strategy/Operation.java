@@ -6,7 +6,9 @@ class OperationBuilder {
     static List<Operation> operations = List.of(new Addition(), new Soustraction());
 
     static Operation of(String operator) {
-        return operations.stream().filter(operation -> operation.accept(operator)).findFirst().orElse(null);
+        return operations.stream().
+                filter(operation -> operation.accept(operator))
+                .findFirst().orElse(null);
     }
 }
 
