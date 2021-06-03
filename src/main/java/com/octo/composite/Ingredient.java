@@ -1,17 +1,17 @@
 package com.octo.composite;
 
 public abstract class Ingredient {
-    protected final String name;
-    Ingredient nextIngredient;
+    protected final String nom;
+    Ingredient ingredientSuivant;
 
-    protected Ingredient(Ingredient nextIngredient, String name) {
-        this.nextIngredient = nextIngredient;
-        this.name = name;
+    protected Ingredient(Ingredient ingredientSuivant, String nom) {
+        this.ingredientSuivant = ingredientSuivant;
+        this.nom = nom;
     };
 
-    public String compose(String value) {
-        final var result = name + (!value.equals("") ? "-" : "") + value;
-        return (nextIngredient!=null?nextIngredient.compose(result): result);
+    public String compose(String valeur) {
+        final var resultat = nom + (!valeur.equals("") ? "-" : "") + valeur;
+        return (ingredientSuivant !=null? ingredientSuivant.compose(resultat): resultat);
     }
 
 }

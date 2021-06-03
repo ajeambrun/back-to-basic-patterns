@@ -1,12 +1,12 @@
 package com.octo.composite;
 
-public class Pate extends Ingredient implements Cookable {
-    public Pate(Ingredient nextIngredient) {
-        super(nextIngredient, "Pate");
+public class Pate extends Ingredient implements Cuisinable {
+    public Pate(Ingredient ingredientSuivant) {
+        super(ingredientSuivant, "Pate");
     }
 
     @Override
-    public String cook() {
+    public String cuire() {
         return this.compose("");
     }
 }

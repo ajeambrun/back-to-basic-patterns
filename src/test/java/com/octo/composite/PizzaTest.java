@@ -7,17 +7,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PizzaTest {
 
     @Test
-    void PizzaDeuxFromages() {
-        assertEquals("Gorgonzola-Chevre-Pate", new Pate(new Chevre(new Gorgonzola(null))).cook());
+    void pizza2Fromages() {
+        assertEquals("Gorgonzola-Chevre-Pate", new Pate(new Chevre(new Gorgonzola(null))).cuire());
     }
 
     @Test
-    void PizzaDoubleChevre() {
-        assertEquals("Chevre-Chevre-Pate", new Pate(new DoubleChevre(null)).cook());
+    void pizzaDoubleChevre() {
+        assertEquals("Chevre-Chevre-Pate", new Pate(new DoubleChevre(null)).cuire());
     }
 
     @Test
-    void cookedThreeCheesePizza() {
-        assertEquals("Gorgonzola-Mozzarella-Chevre-Pate", Recipes.cookedPizza3Cheeses());
+    void pizza3FromagesCuite() {
+        assertEquals("Gorgonzola-Mozzarella-Chevre-Pate", Recettes.Pizza3FromagesCuite());
     }
 }

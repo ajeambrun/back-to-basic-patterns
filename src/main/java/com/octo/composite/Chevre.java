@@ -1,19 +1,19 @@
 package com.octo.composite;
 
 public class Chevre extends Ingredient {
-    public Chevre(Ingredient nextIngredient) {
-        super(nextIngredient, "Chevre");
+    public Chevre(Ingredient ingredientSuivant) {
+        super(ingredientSuivant, "Chevre");
     }
 }
 
 class DoubleChevre extends Ingredient {
 
-    public DoubleChevre(Ingredient nextIngredient) {
-        super(new Chevre(new Chevre(nextIngredient)), "");
+    public DoubleChevre(Ingredient ingredientSuivant) {
+        super(new Chevre(new Chevre(ingredientSuivant)), "");
     }
 
     @Override
-    public String compose(String value) {
-        return nextIngredient.compose(value);
+    public String compose(String valeur) {
+        return ingredientSuivant.compose(valeur);
     }
 }
