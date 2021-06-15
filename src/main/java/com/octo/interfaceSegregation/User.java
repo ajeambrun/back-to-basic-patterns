@@ -1,4 +1,4 @@
-package com.octo.interfaceSeggregation;
+package com.octo.interfaceSegregation;
 
 public class User {
     String username;
